@@ -59,9 +59,9 @@
         <item name="android:paddingRight">12dp</item>
     </style>
 
-    <style name="NoteHoloTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
-        <item name="android:colorPrimary">@color/actionbar_color</item>
-        <item name="android:colorPrimaryDark">@color/statuebar_color</item>
+    <style name="NoteHoloTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/actionbar_color</item>
+        <item name="colorPrimaryDark">@color/statuebar_color</item>
         <item name="android:actionBarWidgetTheme">@style/NoteActionBarTheme</item>
         <item name="android:windowBackground">@android:color/background_light</item>
         
@@ -78,7 +78,7 @@
         <item name="android:textColorHighlight">@color/theme_bg_yellow</item>
         
         <!--PR891489.Selection backgroud not good.Added by hz_nanbing.zou at 06/01/2015 begin  -->
-        <item name="android:actionBarTheme">@style/choicemode</item>
+        <item name="actionBarTheme">@style/choicemode</item>
         <!--PR891489.Selection backgroud not good.Added by hz_nanbing.zou at 06/01/2015 end  -->
         
         <!--PR888027 The first time enter Notes,flash black screen.Added by hz_nanbing.zou at29/12/2014 begin -->
@@ -95,13 +95,13 @@
     </style>
 
     <!-- style for the action bar backgrounds -->
-    <style name="MyActionBar" parent="@android:style/Widget.Material.Light.ActionBar.Solid">
+    <style name="MyActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:background">@color/actionbar_color</item>
         <item name="android:backgroundStacked">@color/actionbar_color</item>
         <item name="android:backgroundSplit">@color/actionbar_color</item>
         <item name="android:actionModeBackground">@color/actionbar_color</item>
         
-        <item name="android:elevation">2dp</item>
+        <item name="elevation">2dp</item>
         
     </style>
 
@@ -116,13 +116,13 @@
 
 
     <!-- PR854590 Reminder dialog ugly.Added by hz_nanbing.zou at 27/11/2014 begin -->
-    <style name="myDialog" parent="@android:style/Theme.Material.Light.Dialog.Alert">
+    <style name="myDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
     </style>
     <!-- PR854590 Reminder dialog ugly.Added by hz_nanbing.zou at 27/11/2014 end -->
 
-    <style name="mysatus" parent="@android:style/Theme.Material.Light.DarkActionBar">
-        <item name="android:colorPrimary">@color/actionbar_color</item>
-        <item name="android:colorPrimaryDark">@color/statuebar_color</item>
+    <style name="mysatus" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/actionbar_color</item>
+        <item name="colorPrimaryDark">@color/statuebar_color</item>
         
         <!--For check list  -->
         <!-- <item name="android:selectableItemBackground">@drawable/menuselect</item> -->
@@ -131,13 +131,13 @@
         
     </style>
 
-    <style name="buttonstatu" parent="@android:style/Theme.Material.Light">
-        <item name="android:colorControlHighlight">@color/actionbar_color</item>
-        <item name="android:colorAccent">@color/actionbar_color</item>
+    <style name="buttonstatu" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/actionbar_color</item>
+        <item name="colorAccent">@color/actionbar_color</item>
     </style>
 
     <!--PR891489.Selection backgroud not good.Added by hz_nanbing.zou at 06/01/2015 begin  -->
-    <style name="choicemode" parent="@android:style/ThemeOverlay.Material.Dark.ActionBar">
+    <style name="choicemode" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:colorBackground">@color/actionbar_color</item>
     </style>
     <!--PR891489.Selection backgroud not good.Added by hz_nanbing.zou at 06/01/2015 end  -->
@@ -146,17 +146,17 @@
     </style>
     
     <!--PR915668.Locked screen,reminder dialog not show.Added by hz_nanbing.zou at 28/01/2015 begin-->
-    <style name="reminderActivitytheme" parent="@android:style/Theme.Material.Wallpaper.NoTitleBar">
+    <style name="reminderActivitytheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowShowWallpaper">false</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
     <!--PR915668.Locked screen,reminder dialog not show.Added by hz_nanbing.zou at 28/01/2015 end-->
     <!-- modify by mingyue.wang for pr947896 begin -->
-    <style name="actionBarstyle" parent="@android:style/Widget.Material.Light.ActionBar.Solid">
-	<item name="android:contentInsetStart">4dp</item>
+    <style name="actionBarstyle" parent="Theme.AppCompat.Light.DarkActionBar">
+	<item name="contentInsetStart">4dp</item>
 	<item name="android:titleTextStyle">@style/actionBar_titleStyle</item>
-	<item name="android:elevation">2dp</item>
+	<item name="elevation">2dp</item>
     </style>
     
       <style name="actionBar_titleStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">

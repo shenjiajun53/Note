@@ -85,6 +85,7 @@ import android.content.Intent;
 //PR804283 alarm icon not on statues bar.Add by hz_nanbing.zou at 13/10/2014 end
 
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -533,15 +534,15 @@ public class NoteCursorAdapter extends CursorAdapter {
         	if(dm == null)
         		dm = new DisplayMetrics();
         	((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(dm);
-        	
-        	view.findViewById(R.id.grid_item).setTranslationZ(12);
+
+        	//view.findViewById(R.id.grid_item).setTranslationZ(12);
         	view.findViewById(R.id.grid_item).setTranslationX(6*dm.density);
         	view.findViewById(R.id.grid_item).setTranslationY(4*dm.density);
         	
-        	view.findViewById(R.id.card1).setTranslationZ(2);
+        	//view.findViewById(R.id.card1).setTranslationZ(2);
         	view.findViewById(R.id.card2).setTranslationX(3*dm.density);
         	view.findViewById(R.id.card2).setTranslationY(2*dm.density);
-            view.findViewById(R.id.card2).setTranslationZ(6);
+            //view.findViewById(R.id.card2).setTranslationZ(6);
 
             setSort(view.findViewById(R.id.card1), true,0);
             setSort(view.findViewById(R.id.card2), true,1);
@@ -689,7 +690,7 @@ public class NoteCursorAdapter extends CursorAdapter {
         	
         	view.findViewById(R.id.card1).setVisibility(View.GONE);
         	view.findViewById(R.id.card2).setVisibility(View.GONE);
-        	view.findViewById(R.id.card_layout).setTranslationZ(4);
+        	//view.findViewById(R.id.card_layout).setTranslationZ(4);
             //[BUGFIX]-ADD-BEGIN by AMNJ.rurong.zhang,2015-1-30,PR917795
             switch (id) {
                 case Constants.NOTE_BG_White_ID: {
