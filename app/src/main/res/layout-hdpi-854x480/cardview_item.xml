@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+===================================================================================
+|                                                                    Date:07/2014 |
+|                                 PRESENTATION                                    |
+|                                                                                 |
+|        Copyright 2014 TCL Communication Technology Holdings Limited.            |
+|                                                                                 |
+| This material is company confidential, cannot be reproduced in any form         |
+| without the written permission of TCL Communication Technology Holdings         |
+| Limited.                                                                        |
+|                                                                                 |
+| ******************************************************************************* |
+|  Author :  gerong                                                               |
+|  Email  :  rong.ge@jrdcom.com                                                   |
+|  Role   :                                                                       |
+|  Reference documents :                                                          |
+| ******************************************************************************* |
+|  Comments :                                                                     |
+|  File     :                                                                     |
+|  Labels   :                                                                     |
+| ******************************************************************************* |
+| =============================================================================== |
+|      Modifications on Features list / Changes Request / Problems Report         |
+| ******************************************************************************* |
+|    date   |        author        |         Key          |      comment          |
+| **********|**********************|**********************|********************** |
+| 07/30/2014|        gerong        |      PR-723075       |Long press note display|
+|           |                      |                      |wrong                  |
+| **********|**********************|**********************|********************** |
+==================================================================================
+-->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"    
+    >
+<ImageView 
+    android:id="@+id/card1"
+    android:layout_width="140dp"
+    android:layout_height="140dp"
+    android:elevation="0dp"
+    android:visibility="gone"
+    />    
+<ImageView 
+    android:id="@+id/card2"
+    android:layout_width="140dp"
+    android:layout_height="140dp"
+    android:elevation="0dp"
+    android:visibility="gone"
+    />     
+
+<!-- FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 begin -->
+<RelativeLayout 
+    android:id="@+id/grid_item"
+    android:layout_width="140dp"
+    android:layout_height="140dp"
+ >
+
+    <!-- [BUGFIX]-Add-BEGIN by TSCD.gerong,07/30/2014,PR-723075, -->
+    <!-- Long press note display wrong -->
+    <ImageView
+       android:id="@+id/select_image"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:tint="@color/actionbar_color"
+       android:visibility="gone" />
+    <!-- [BUGFIX]-Add-END by TSCD.gerong -->
+    <ImageView
+        android:id="@+id/grid_item_image"
+        android:layout_width="fill_parent"
+        android:layout_height="94dp"
+        android:layout_marginStart="0dip"
+        android:layout_marginEnd="0dip"
+        android:layout_marginTop="0dip"
+        android:adjustViewBounds="true"
+        android:translationZ="6dp"
+        android:visibility="gone" />
+    <!--[BUGFIX]-MOD-BEGIN by TSCD(yanmei.zhang),05/29/2014,PR-682718 -->
+    <TextView
+        android:id="@+id/display_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/grid_item_image"
+        android:layout_marginBottom="25dip"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        
+        android:maxLines="6"
+
+
+        
+        android:textColor="@color/content_font_color"
+        android:textSize="16sp"
+        
+        android:visibility="gone" />
+    <!--[BUGFIX]-MOD-END by TSCD(yanmei.zhang),05/29/2014,PR-682718,-->
+    <TextView
+        android:id="@+id/item_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="#727171"
+        android:textSize="40sp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/grid_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible" >
+
+        <!--PR907254 Modified icon & text size.Modified by hz_nanbing.zou at 19/01/2015 begin  -->
+        <TextView
+            android:id="@+id/group_name"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="6dp"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/date_font_color"
+            android:textSize="10sp" />
+
+        <!--PR902833 When had all mark,not display.Modified by hz_nanbing.zou at 14/01/2015 begin -->
+        <ImageView
+            android:id="@+id/audio_mark"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="2dip"
+            android:layout_toStartOf="@+id/image_mark"
+            android:background="@drawable/ic_mic_grey600_18dp"
+            android:visibility="gone"
+            android:layout_centerVertical="true" />
+        <ImageView
+            android:id="@+id/image_mark"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="2dip"
+            android:layout_toStartOf="@+id/star_mark"
+            android:background="@drawable/ic_image_grey600_18dp"
+            android:visibility="gone"
+            android:layout_centerVertical="true" />
+
+        <ImageView
+            android:id="@+id/star_mark"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="2dip"
+            android:layout_marginEnd="2dip"
+            android:background="@drawable/ic_access_alarm_grey600_18dp"
+            android:visibility="gone"
+            android:layout_centerVertical="true" />
+        <!--PR902833 When had all mark,not display.Modified by hz_nanbing.zou at 14/01/2015 end -->
+        <!--PR907254 Modified icon & text size.Modified by hz_nanbing.zou at 19/01/2015 end  -->
+        
+    </RelativeLayout>
+
+</RelativeLayout>
+<!-- FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 end -->
+</FrameLayout>

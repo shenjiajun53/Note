@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+| ============================================================================ |
+|      Modifications on Features list / Changes Request / Problems Report      |
+| **************************************************************************** |
+|    date   |        author        |         Key          |      comment       |
+| **********|**********************|**********************|******************* |
+| 11/27/2013|ying.shen             |FR-561207             |Some options is not |
+|           |                      |                      |DNA style in Notes  |
+|           |                      |                      |app                 |
+| **********|**********************|**********************|******************* |
+| 05/29/2014|       yanmei.zhang   |       PR-682718      |[Notes]UI display   |
+|           |                      |                      |unfriendly when     |
+|           |                      |                      |font size set huge  |
+| **********|**********************|**********************|******************* |
+================================================================================
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="32dip"
+    android:layout_height="32dip"
+    android:gravity="center"
+    android:orientation="horizontal" >
+<!--[FEATURE]-Mod-BEGIN by TSCD(yanmei.zhang),05/29/2014,PR-682718, -->
+<!--[FEATURE]-Mod-BEGIN by TSNJ.(ying.shen),27/11/2013,PR-561207, -->
+
+	<!-- FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 begin -->
+    <ImageButton
+        android:id="@+id/create_new"
+        android:layout_width="72dip"
+        android:layout_height="32dip"
+        android:layout_gravity="right"
+        android:src="@drawable/ic_add"
+        android:background="@drawable/note_action_bar_bg"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ccffffff"
+        android:textSize="18sp"/>
+	<!-- FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 end -->
+
+<!--[FEATURE]-Mod-BEGIN by TSNJ.(ying.shen)-->
+<!--[FEATURE]-Mod-BEGIN by TSCD(yanmei.zhang)-->
+
+</LinearLayout>

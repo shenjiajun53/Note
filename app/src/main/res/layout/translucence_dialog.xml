@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="0.0dip" >
+
+    <ImageView
+        android:id="@+id/ivNavigater_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:layout_margin="0.0dip"
+        android:adjustViewBounds="true" />
+
+    <TextView
+        android:id="@+id/text_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_text"
+        android:layout_centerHorizontal="true"
+        android:text="@string/help_promt"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/button_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/bg_down_arrow" />
+
+    <!--PR843332 Click the create first notes button does not go directly to the editing interface.Added by hz_nanbing.zou at 05/12/2014 begin  -->
+    <ImageView
+        android:id="@+id/button"
+        android:layout_width="120dp"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="6dip"
+        android:src="@drawable/ic_add"
+        android:background="@drawable/bg_frame" />
+    <!--PR843332 Click the create first notes button does not go directly to the editing interface.Added by hz_nanbing.zou at 05/12/2014 end  -->
+
+</RelativeLayout>

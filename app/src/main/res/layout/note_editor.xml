@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+===================================================================================
+|                                                                    Date:06/2014 |
+|                                 PRESENTATION                                    |
+|                                                                                 |
+|        Copyright 2014 TCL Communication Technology Holdings Limited.            |
+|                                                                                 |
+| This material is company confidential, cannot be reproduced in any form         |
+| without the written permission of TCL Communication Technology Holdings         |
+| Limited.                                                                        |
+|                                                                                 |
+| ******************************************************************************* |
+|  Author :  gerong                                                               |
+|  Email  :  rong.ge@jrdcom.com                                                   |
+|  Role   :                                                                       |
+|  Reference documents :                                                          |
+| ******************************************************************************* |
+|  Comments :                                                                     |
+|  File     :                                                                     |
+|  Labels   :                                                                     |
+| ******************************************************************************* |
+| =============================================================================== |
+|      Modifications on Features list / Changes Request / Problems Report         |
+| ******************************************************************************* |
+|    date   |        author        |         Key          |      comment          |
+| **********|**********************|**********************|********************** |
+| 06/20/2014|        gerong        |      PR-695661       |Record audio display   |
+|           |                      |                      |unfriendly after saved |
+|           |                      |                      |in Notes               |
+| **********|**********************|**********************|********************** |
+| 06/23/2014|        gerong        |      PR-708559       |The last line text or  |
+|           |                      |                      |photo should be semi   |
+|           |                      |                      |transparent in editor  |
+|           |                      |                      |page                   |
+| **********|**********************|**********************|********************** |
+==================================================================================
+-->
+<!-- [BUGFIX]-Mod-BEGIN by TSCD.gerong,06/20/2014,PR-695661, -->
+<!-- Record audio display unfriendly after saved in Notes -->
+
+<!-- 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+      android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:background="#ff009fff"
+    > -->
+    
+
+
+<!-- FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 begin -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/note_editor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/theme_bg_white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" 
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    
+    >
+
+<!-- [BUGFIX]-Mod-BEGIN by TSCD.gerong,06/23/2014,PR-708559, -->
+<!-- FR789597 modified the code for standalone APK development by bing.wang.hz 2014.09.15 begin-->
+<!-- The last line text or photo should be semi transparent in editor page -->
+    <RelativeLayout
+        android:id="@+id/text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/record_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:divider="?android:attr/dividerVertical"
+            android:dividerPadding="12dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:visibility="gone" >
+
+            <FrameLayout
+                android:id="@+id/leftlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="14dp"
+                >
+            <Button
+                android:id="@+id/stop_audio_item"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/ic_stop_circle_fill_grey600_40dp"
+                android:clickable="true"
+                android:visibility="gone" />
+            <ImageView
+                android:id="@+id/audio_view"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/ic_mic_grey600_24dp"
+                android:visibility="gone" >
+            </ImageView>
+            </FrameLayout>
+
+            <!-- [BUGFIX]-Mod-BEGIN by TSCD(yanmei.zhang),05/29/2014,PR-682718, -->
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/leftlayout" >
+
+                <TextView
+                    android:id="@+id/tap"
+                    style="?android:attr/actionButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/content_font_color"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+                <!-- PR835760 The stopButton shift.Modified by hz_nanbing.zou at 11/11/2014 begin -->
+
+                <TextView
+                    android:id="@+id/date"
+                    style="?android:attr/actionButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/content_font_color"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+                <!-- [BUGFIX]-Mod-END by TSCD(yanmei.zhang) -->
+                <!-- PR835760 The stopButton shift.Modified by hz_nanbing.zou at 11/11/2014 end -->
+            </FrameLayout>
+
+
+        </RelativeLayout>
+
+        <com.tct.note.view.NoteEditorView
+            android:id="@+id/text_field"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/record_layout"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1.0"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="top"
+            android:scrollbars="vertical"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bottom_shadow"
+            android:visibility="gone"/>
+    </RelativeLayout>
+<!-- FR789597 modified the code for standalone APK development by bing.wang.hz 2014.09.15 end-->
+<!-- [BUGFIX]-Mod-END by TSCD.gerong -->
+</LinearLayout> 
+<!-- FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 end -->
+<!-- </LinearLayout> -->
+<!-- [BUGFIX]-Mod-END by TSCD.gerong -->

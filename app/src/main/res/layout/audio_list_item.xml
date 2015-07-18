@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+===================================================================================
+|                                                                    Date:06/2014 |
+|                                 PRESENTATION                                    |
+|                                                                                 |
+|        Copyright 2014 TCL Communication Technology Holdings Limited.            |
+|                                                                                 |
+| This material is company confidential, cannot be reproduced in any form         |
+| without the written permission of TCL Communication Technology Holdings         |
+| Limited.                                                                        |
+|                                                                                 |
+| ******************************************************************************* |
+|  Author :  gerong                                                               |
+|  Email  :  rong.ge@jrdcom.com                                                   |
+|  Role   :                                                                       |
+|  Reference documents :                                                          |
+| ******************************************************************************* |
+|  Comments :                                                                     |
+|  File     :                                                                     |
+|  Labels   :                                                                     |
+| ******************************************************************************* |
+| =============================================================================== |
+|      Modifications on Features list / Changes Request / Problems Report         |
+| ******************************************************************************* |
+|    date   |        author        |         Key          |      comment          |
+| **********|**********************|**********************|********************** |
+| 06/20/2014|        gerong        |      PR-695661       |Record audio display   |
+|           |                      |                      |unfriendly after saved |
+|           |                      |                      |in Notes               |
+| **********|**********************|**********************|********************** |
+==================================================================================
+-->
+<!-- [BUGFIX]-Mod-BEGIN by TSCD.gerong,06/20/2014,PR-695661, -->
+<!-- Record audio display unfriendly after saved in Notes -->
+
+
+<!-- FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 begin -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/audio_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:padding="0dp" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/audio_play"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="6dp"
+                android:background="#00000000" />
+			<TextView
+                android:id="@+id/record_tv"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:textSize="@dimen/attach_textsize"
+			    android:text="@string/recording"
+			    android:paddingStart="16dp"
+			    android:textColor="@color/content_font_color"
+			    android:layout_centerVertical="true"
+			    android:layout_toEndOf="@+id/audio_play"
+			    />
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal" >
+
+                <!-- [BUGFIX]-Mod-BEGIN by TSCD(yanmei.zhang),05/29/2014,PR-682718, -->
+
+                <TextView
+                    android:id="@+id/total_time_before"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="@color/content_font_color"
+                    android:textSize="@dimen/attach_textsize" />
+
+                <!-- Change text size for Ergo5.1.1 at 16/01/2015 -->
+
+                <TextView
+                    android:id="@+id/start_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/content_font_color"
+                    android:textSize="@dimen/attach_textsize"
+                    android:visibility="gone" />
+                <!-- Change text size for Ergo5.1.1 at 16/01/2015 -->
+
+                <TextView
+                    android:id="@+id/total_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="@color/content_font_color"
+                    android:textSize="@dimen/attach_textsize"
+                    android:visibility="gone" />
+                <!-- [BUGFIX]-Mod-END bby TSCD(yanmei.zhang) -->
+
+                <ImageButton
+                    android:id="@+id/delete_item"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/close"
+                    android:layout_marginEnd="2dp"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout><!-- FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 end -->
+
+
+<!-- [BUGFIX]-Mod-END by TSCD.gerong -->

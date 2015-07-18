@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- [BUGFIX]-Add-BEGIN by TSNJ.(xiang.miao),11/26/2013,PR-561204, -->
+    <item
+        android:id="@+id/search"
+        android:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/ic_search"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:title="@string/search_label"/>
+    <!-- [BUGFIX]-Add-END by TSNJ.(xiang.miao), -->
+    <!-- [BUGFIX]-Add-BEGIN by TSCD.lin.peng,08/7/2014,694532 -->
+    
+    <!--PR 831839.When searchview expand,press menu display black.Modified by hz_nanbing.zou at 10/11/2014 begin -->
+    <item
+        android:id="@+id/add"
+        android:actionLayout="@layout/empty"
+        android:showAsAction="always"
+        android:visible="false"/>
+    <!-- [BUGFIX]-Add-END by TSCD.lin.peng,08/7/2014,694532 -->
+    <item
+        android:id="@+id/action_create_new"
+        android:actionLayout="@layout/create_new"
+        android:showAsAction="always"/>
+    <item
+        android:actionLayout="@layout/empty"
+        android:showAsAction="always"/>
+    <!--PR 831839.When searchview expand,press menu display black.Modified by hz_nanbing.zou at 10/11/2014 end -->
+</menu>

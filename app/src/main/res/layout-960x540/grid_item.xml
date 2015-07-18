@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+===================================================================================
+|                                                                    Date:07/2014 |
+|                                 PRESENTATION                                    |
+|                                                                                 |
+|        Copyright 2014 TCL Communication Technology Holdings Limited.            |
+|                                                                                 |
+| This material is company confidential, cannot be reproduced in any form         |
+| without the written permission of TCL Communication Technology Holdings         |
+| Limited.                                                                        |
+|                                                                                 |
+| ******************************************************************************* |
+|  Author :  gerong                                                               |
+|  Email  :  rong.ge@jrdcom.com                                                   |
+|  Role   :                                                                       |
+|  Reference documents :                                                          |
+| ******************************************************************************* |
+|  Comments :                                                                     |
+|  File     :                                                                     |
+|  Labels   :                                                                     |
+| ******************************************************************************* |
+| =============================================================================== |
+|      Modifications on Features list / Changes Request / Problems Report         |
+| ******************************************************************************* |
+|    date   |        author        |         Key          |      comment          |
+| **********|**********************|**********************|********************** |
+| 07/30/2014|        gerong        |      PR-723075       |Long press note display|
+|           |                      |                      |wrong                  |
+| **********|**********************|**********************|********************** |
+==================================================================================
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/grid_item"
+    android:layout_width="180dp"
+    android:layout_height="180dp" >
+
+    <!-- [BUGFIX]-Add-BEGIN by TSCD.gerong,07/30/2014,PR-723075, -->
+    <!-- Long press note display wrong -->
+    <ImageView
+       android:id="@+id/select_image"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:visibility="gone" />
+    <!-- [BUGFIX]-Add-END by TSCD.gerong -->
+    <ImageView
+        android:id="@+id/grid_item_image"
+        android:layout_width="fill_parent"
+        android:layout_height="82dp"
+        android:layout_marginLeft="3dip"
+        android:layout_marginRight="3dip"
+        android:layout_marginTop="2dip"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/display_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/grid_item_image"
+        android:layout_marginBottom="30dip"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+
+        android:textColor="@color/content_font_color"
+        android:textSize="16sp"
+
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/item_count"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="#727171"
+        android:textSize="22sp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/grid_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/group_name"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="6dp"
+            android:ellipsize="end"
+            android:gravity="left|center_vertical"
+            android:singleLine="true"
+            
+            android:textColor="@color/date_font_color"
+        	android:textSize="8sp"/>
+
+        <ImageView
+            android:id="@+id/audio_mark"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="2dip"
+            android:layout_toLeftOf="@+id/image_mark"
+            android:background="@drawable/audio_mark"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/image_mark"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="2dip"
+            android:layout_toLeftOf="@+id/star_mark"
+            android:background="@drawable/image_mark"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/star_mark"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="2dip"
+            android:layout_marginRight="2dip"
+            android:background="@drawable/reminder_mark"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>

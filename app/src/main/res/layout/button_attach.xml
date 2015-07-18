@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2011 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!-- Dimensions are set at runtime in ActionBarAdapter -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/note_action_sec_bar_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/camera_item"
+        style="?android:attr/actionButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_weight="1.0"
+        android:drawableTop="@drawable/ic_camera"
+        android:text="@string/camera"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/add_image_item"
+        style="?android:attr/actionButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_weight="1.0"
+        android:clickable="true"
+        android:drawableTop="@drawable/ic_album"
+        android:text="@string/album"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/record_item"
+        style="?android:attr/actionButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_weight="1.0"
+        android:clickable="true"
+        android:drawableTop="@drawable/ic_record"
+        android:text="@string/record"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/reminder_item"
+        style="?android:attr/actionButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_weight="1.0"
+        android:clickable="true"
+        android:drawableTop="@drawable/ic_reminder"
+        android:text="@string/reminder"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+
+</LinearLayout>

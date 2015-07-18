@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2011 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!-- Dimensions are set at runtime in ActionBarAdapter -->
+<!-- <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dip"
+    android:layout_height="0dip" > -->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/actionbar_title"
+        android:layout_width="fill_parent"
+        android:layout_height="48dip"
+        android:divider="?android:attr/dividerVertical"
+        android:dividerPadding="12dip"
+        android:gravity="center_vertical"
+        android:showDividers="middle" >
+
+        <!-- PR842936 Hard to click save button.Modified by hz_nanbing.zou at 17/11/2014 begin -->
+        <ImageButton
+            android:id="@+id/done_menu_item"
+            style="?android:attr/selectableItemBackgroundBorderless"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/save"
+            android:background="@drawable/ripple_for_done" />
+        <!-- PR842936 Hard to click save button.Modified by hz_nanbing.zou at 17/11/2014 end -->
+        
+        <!--Added for Ergo5.1.0 by hz_nanbing.zou at 15/01/2015 begin  -->
+        <TextView 
+            android:id="@+id/editor_add"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_toEndOf="@+id/done_menu_item"
+            android:text="@string/edit_add"
+            android:textColor="@color/theme_bg_white"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:textSize="18sp"
+           android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:paddingStart="1dp"
+            android:paddingEnd="1dp"
+            />
+        
+<!--         <ImageButton 
+            android:id="@+id/view_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:src="@drawable/viewmode_pre"
+            android:tint="#ffffff"
+            android:background="@color/actionbar_color"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/view_next"
+            android:paddingRight="20dp"
+            android:visibility="gone"
+            />
+        <ImageButton 
+            android:id="@+id/view_next"
+            android:background="@color/actionbar_color"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:src="@drawable/viewmode_next"
+            android:tint="#ffffff"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/edit_modeImv"
+            android:paddingRight="20dp"
+            android:visibility="gone"
+            /> -->
+        
+        <ImageView
+            android:id="@+id/edit_modeImv"
+            style="?android:attr/actionButtonStyle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_toStartOf="@+id/view_delete"
+            android:layout_centerVertical="true"
+			android:layout_marginEnd="20dp"
+            android:background="@drawable/ripple_for_done"
+            android:src="@drawable/ic_ab_mode_edit_white_24dp"
+            android:visibility="gone" >
+        </ImageView> 
+        <ImageButton 
+            android:id="@+id/view_delete"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+			android:layout_centerVertical="true"
+			android:layout_marginEnd="15dp"
+			android:background="@drawable/ripple_for_done"
+			android:src="@drawable/ic_ab_delete_white_24dp"
+			android:visibility="gone"
+            />
+        <!--Added for Ergo5.1.0 by hz_nanbing.zou at 15/01/2015 end  -->       
+
+
+    </RelativeLayout>
+
+<!-- </FrameLayout> -->

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--PR 835997  The search result bg not as same as the main bg.Modified by hz_nanbing.zou at 13/11/2014 begin -->
+
+<!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+      android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:background="#ff009fff"
+    > -->
+
+<!--PR901775  SearchResult too far from menu bar.Modified by hz_nanbing.zou at 13/01/2015 begin -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_floating_material_light"
+    
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    
+     >
+<!--PR 835997  The search result bg not as same as the main bg.Modified by hz_nanbing.zou at 13/11/2014 begin -->
+
+    <GridView
+        android:paddingStart="5dp"
+    	android:paddingEnd="5dp"
+        android:id="@+id/grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:choiceMode="multipleChoice"
+        android:gravity="center"
+        android:horizontalSpacing="16dp"
+        android:numColumns="auto_fit"
+        android:paddingTop="10dp"
+        android:paddingBottom="5dp"
+        
+        android:scrollbars="none"
+        
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="17dp" >
+    </GridView>
+<!--PR901775  SearchResult too far from menu bar.Modified by hz_nanbing.zou at 13/01/2015 end -->
+
+    <TextView
+        android:id="@+id/no_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/no_search_result"
+        android:textColor="#9B9B9B"
+        android:textSize="18sp"
+        android:visibility="gone" />
+    
+ <ImageButton
+        android:id="@+id/newadd_btn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/floatactionbutton"
+        android:translationZ="2dp"
+        android:src="@drawable/ic_add_black_24dp"
+        android:tint="@color/theme_bg_white"
+        android:visibility="visible" />
+
+</RelativeLayout>
+
+<!-- </LinearLayout> -->

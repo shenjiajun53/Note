@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+===================================================================================
+|                                                                    Date:07/2014 |
+|                                 PRESENTATION                                    |
+|                                                                                 |
+|        Copyright 2014 TCL Communication Technology Holdings Limited.            |
+|                                                                                 |
+| This material is company confidential, cannot be reproduced in any form         |
+| without the written permission of TCL Communication Technology Holdings         |
+| Limited.                                                                        |
+|                                                                                 |
+| ******************************************************************************* |
+|  Author :  gerong                                                               |
+|  Email  :  rong.ge@jrdcom.com                                                   |
+|  Role   :                                                                       |
+|  Reference documents :                                                          |
+| ******************************************************************************* |
+|  Comments :                                                                     |
+|  File     :                                                                     |
+|  Labels   :                                                                     |
+| ******************************************************************************* |
+| =============================================================================== |
+|      Modifications on Features list / Changes Request / Problems Report         |
+| ******************************************************************************* |
+|    date   |        author        |         Key          |      comment          |
+| **********|**********************|**********************|********************** |
+| 1/11/2015|        rurong.zhang        |      PR-896382   |Names appear blank when Notes remind|
+|           |                      |                      |wrong                  |
+| **********|**********************|**********************|********************** |
+==================================================================================
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/note_review_bg"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/display_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/content_font_color"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:maxLines="4"
+        android:textSize="16sp"
+        android:visibility="gone" /><!-- modify by mingyue.wang for pr943599 on 2015-03-09 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp" 
+        android:layout_marginTop="5dip">
+
+        <!--PR905648.When font size change to huge,text has been cut.Modified by hz_nanbing.zou at 19/01/2015 beign-->
+        <TextView
+            android:id="@+id/timetv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:singleLine="true"
+            android:textColor="@color/date_font_color"
+            android:textSize="13sp" />
+        <!--PR905648.When font size change to huge,text has been cut.Modified by hz_nanbing.zou at 19/01/2015 end-->
+
+        <ImageView
+            android:id="@+id/audio_mark"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="2dip"
+            android:layout_marginEnd="4dp"
+            android:layout_toStartOf="@+id/image_mark"
+            android:background="@drawable/ic_mic_grey600_18dp"
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/image_mark"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="2dip"
+            android:layout_marginEnd="4dp"
+            android:layout_toStartOf="@+id/star_mark"
+            android:background="@drawable/ic_image_grey600_18dp"
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/star_mark"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="2dip"
+            android:layout_marginEnd="2dip"
+            android:background="@drawable/ic_access_alarm_grey600_18dp"
+            android:visibility="gone"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="97f7e239e86ef994de894818fdd8a71d2e89d6aa">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\pre-dexed\debug\classes-fdb702777fa49ab27e11b2b01dae55783fc0b125.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\pre-dexed\debug\classes-96e7071f94084663e53bf26f96774b5b461773c1.jar" />
+    </item>
+    <item
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-87f5a75e1de9f212162c85b163eaa9811670bbdf.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-ae9c1093a6d16621237b01e6ff77a289c3b8161a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\exploded-aar\com.android.support\support-v13\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9aa93835393824b436f366120c9ba8a0260ce75d">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\pre-dexed\debug\classes-78bd01550cad9b3fc16cff11f386d4cb36cc4391.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\pre-dexed\debug\classes-d33a6637738a502a6d1116b9a5cb481d3bf6f3c5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\exploded-aar\com.android.support\support-v13\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="79a5b6d9fbab3b5fb4c6f86a1ed7a17722fd937b">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-8d1594b5f33600c7b0d3d92e37f4b093375788c2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\pre-dexed\debug\classes-0f9da388728dd70d9b4dbd42423511465850f598.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\JrdNote\Note\app\build\intermediates\pre-dexed\debug\classes-4af99d3c36eb1732efcdd97360014aff88464c3e.jar" />
+    </item>
+
+</items>

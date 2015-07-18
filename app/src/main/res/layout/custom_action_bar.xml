@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2011 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!-- Dimensions are set at runtime in ActionBarAdapter -->
+<!-- <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dip"
+    android:layout_height="0dip" > -->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/actionbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:divider="?android:attr/dividerVertical"
+        android:dividerPadding="12dip"
+        android:gravity="center_vertical"
+        android:showDividers="middle" >
+
+        <!-- PR842936 Hard to click save button.Modified by hz_nanbing.zou at 17/11/2014 begin -->
+        <ImageButton
+            android:id="@+id/done_menu_item"
+            style="?android:attr/selectableItemBackgroundBorderless"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="8dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/save" 
+            android:background="@drawable/ripple_for_done"/>
+        <!-- PR842936 Hard to click save button.Modified by hz_nanbing.zou at 17/11/2014 end -->
+        
+        <!--Added for Ergo5.1.0 by hz_nanbing.zou at 15/01/2015 begin  -->
+        <TextView 
+            android:id="@+id/editor_add"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_toEndOf="@+id/done_menu_item"
+            android:text="@string/edit_add"
+            android:textColor="@color/theme_bg_white"
+            android:textStyle="bold"
+            android:layout_marginStart="15dp"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:singleLine="true"
+            />
+        
+        <ImageView
+            android:id="@+id/edit_modeImv"
+            style="?android:attr/actionButtonStyle"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+			android:layout_alignParentEnd="true"
+			android:layout_centerVertical="true"
+			android:layout_marginEnd="15dp"
+            android:background="@drawable/ic_ab_mode_edit_white_24dp"
+            android:visibility="gone" >
+        </ImageView> 
+        <!--Added for Ergo5.1.0 by hz_nanbing.zou at 15/01/2015 end  -->       
+
+<!-- 
+        <ImageView
+            android:id="@+id/audio_view"
+            style="?android:attr/actionButtonStyle"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/done_menu_item"
+            android:background="@drawable/ic_record"
+            android:visibility="gone" >
+        </ImageView>-->
+
+        <!--[BUGFIX]-Mod-BEGIN by TSCD(yanmei.zhang),05/29/2014,PR-682718,-->
+        
+        <!-- PR835760 The stopButton shift.Modified by hz_nanbing.zou at 11/11/2014 begin -->
+        <TextView
+            android:id="@+id/date"
+            style="?android:attr/actionButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_toStartOf="@+id/stop_audio_item"
+            android:layout_marginEnd="66dp"
+            android:layout_centerVertical="true"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:visibility="gone" />
+        <!--[BUGFIX]-Mod-END by TSCD(yanmei.zhang)-->
+        <!--PR835760 The stopButton shift.Modified by hz_nanbing.zou at 11/11/2014 end-->
+
+        <Button
+            android:id="@+id/stop_audio_item"
+            style="?android:attr/actionButtonStyle"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/audio_click"
+            android:clickable="true"
+            android:visibility="gone" />
+
+       <!--  <RelativeLayout
+            android:id="@+id/add_attachment"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="58dp" >
+
+            <ImageButton
+                android:id="@+id/add_attachment_item"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/note_action_bar_bg"
+                android:clickable="true"
+                android:src="@drawable/ic_add"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/add_attachment_flag"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/attachment_indicate"
+                android:clickable="true"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/change_color"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="16dp" >
+
+            <ImageButton
+                android:id="@+id/change_bg_item"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/note_action_bar_bg"
+                android:clickable="true"
+                android:src="@drawable/ic_theme"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/change_bg_flag"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/attachment_indicate"
+                android:clickable="true"
+                android:visibility="gone" />
+        </RelativeLayout> -->
+    </RelativeLayout>
+
+<!-- </FrameLayout> -->

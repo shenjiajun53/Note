@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape"
+    android:orientation="vertical" >
+
+    <!-- // PR817193 widget not sync. Modified by hz_nanbing_zou at 30/10/2014 begin -->
+   
+  <RelativeLayout 
+    android:id="@+id/widget_title"
+    android:layout_width="match_parent"
+    android:layout_height="36dp"
+    android:layout_gravity="top|center_horizontal"
+    android:orientation="horizontal"
+    android:paddingStart="10dp"
+      >
+<!--         <ImageButton
+            android:id="@+id/widget_audio"
+            android:layout_width="36dp"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:src="@drawable/widget_audio"
+            android:layout_alignParentLeft="true"
+            android:visibility="gone" /> -->
+
+<!--PR901655.miniApp not good.Modified by hz_nanbing.zou at 13/01/2015 begin  -->   
+<!--PR905580 Widget date too left,Modified bby hz_nanbing.zou at 16/01/2015 begin -->     
+        <TextView 
+            android:id="@+id/widget_date"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/mini_color"
+            android:paddingStart="7dp"
+            android:layout_toEndOf="@+id/widget_audio"
+            android:visibility="visible"
+            />
+        <ImageButton 
+            android:id="@+id/minifirst"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_toEndOf="@+id/widget_date"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/ic_mic_blue_18dp"
+            android:layout_centerVertical="true"
+            android:background="@color/theme_bg_white"
+            android:visibility="gone"
+            />
+        <ImageButton 
+            android:id="@+id/minisecond"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_toEndOf="@+id/minifirst"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/ic_image_blue_18dp"
+            android:layout_centerVertical="true"
+            android:background="@color/theme_bg_white"
+            android:visibility="gone"
+            />
+        <ImageButton 
+            android:id="@+id/minithree"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_toEndOf="@+id/minisecond"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/ic_access_alarm_blue_18dp"
+            android:layout_centerVertical="true"
+            android:background="@color/theme_bg_white"
+            android:visibility="gone"
+            />
+<!--PR905580 Widget date too left,Modified bby hz_nanbing.zou at 16/01/2015 end --> 
+    <ImageButton
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:src="@drawable/miniadd"
+            android:background="@color/theme_bg_white"
+            android:layout_centerVertical="true"
+            android:paddingEnd="24dp"
+            android:visibility="visible"
+            android:layout_toStartOf="@+id/miniEnter"/>
+		<ImageButton 
+		    android:id="@+id/miniEnter"
+			android:layout_height="24dp"
+            android:layout_width="24dp"
+            android:layout_marginEnd="16dp"
+			android:layout_alignParentEnd="true"
+			android:src="@drawable/bigs"
+			android:layout_centerVertical="true"
+			android:background="@color/theme_bg_white"
+		    />
+  </RelativeLayout> 
+
+        <ImageView
+            android:id="@+id/all_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/miniline_color"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:visibility="visible" />
+
+    <!-- // PR817193 widget not sync. Modified by hz_nanbing_zou at 30/10/2014 end -->
+
+<FrameLayout
+    android:id="@+id/note_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:paddingBottom="12dp"
+    android:paddingTop="6dp" >
+    <TextView
+            android:id="@+id/no_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:gravity="center"
+            android:textColor="#89000000"
+            android:text="@string/no_note_exist"
+            android:textSize="18sp"
+            android:visibility="gone" />
+    <RelativeLayout
+        android:id="@+id/widget_content"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" >
+
+		<!--PR848749 widget not update when widget layout change.Modified by hz_nanbing.zou at 25/11/2014 begin -->
+        <TextView
+            android:id="@+id/text_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:lineSpacingExtra="@dimen/mini_linespace"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:visibility="gone" />
+        <!--PR848749 widget not update when widget layout change.Modified by hz_nanbing.zou at 25/11/2014 end -->
+
+<!--         <ImageView
+            android:id="@+id/image_content"
+            android:layout_below ="@id/text_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:visibility="gone" /> -->
+    </RelativeLayout>
+</FrameLayout>
+<!--PR901655.miniApp not good.Modified by hz_nanbing.zou at 13/01/2015 end  -->
+
+
+ <ImageView
+            android:id="@+id/all_line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/miniline_color"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:visibility="visible" />
+ <LinearLayout
+        android:id="@+id/widget_header"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@drawable/shape"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+	<ImageButton
+            android:id="@+id/widget_pre"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/add"
+            android:background="#00000000"
+            android:src="@drawable/widget_pre"
+            android:visibility="visible" />
+
+    
+	<TextView 
+            android:id="@+id/widget_count"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="@color/minitext_color"
+            android:layout_toEndOf="@+id/widget_date"
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            />
+	<ImageButton
+            android:id="@+id/widget_next"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/add"
+            android:background="#00000000"
+            android:src="@drawable/widget_next"
+            android:visibility="visible" />
+        
+    </LinearLayout>
+<RelativeLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:id="@+id/empty_layout"
+    android:visibility="gone"
+    android:background="@drawable/shape"
+    >
+<!--PR853279  When empty,widget not good.Added by hz_nanbing.zou at 05/12/2014 begin  -->
+    <RelativeLayout 
+        android:id="@+id/empty_fill"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:background="@drawable/shape"
+        android:visibility="gone" >
+  
+    <ImageButton        
+        android:id="@+id/miniadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/miniadd"
+       	android:background="@drawable/shape"
+        android:layout_centerVertical="true"
+		android:layout_toStartOf="@+id/miniemptyEnter"
+		android:paddingEnd="24dp"
+		android:visibility="gone"
+		
+        >
+    </ImageButton>
+    <TextView
+        android:id="@+id/note_empty2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:paddingStart="5dp"
+		android:layout_alignParentStart="true"
+        android:layout_weight="1"
+        android:layout_centerVertical="true"
+        android:textColor="#000000"
+        android:text="@string/add_note"
+        android:textSize="18sp"
+        android:visibility="gone" />
+	<ImageButton 
+		    android:id="@+id/miniemptyEnter"
+			android:layout_height="24dp"
+            android:layout_width="24dp"
+            android:layout_marginEnd="16dp"
+			android:layout_alignParentEnd="true"
+			android:layout_centerVertical="true"
+			android:src="@drawable/bigs"
+			android:background="@drawable/shape"
+			android:visibility="gone" 
+		    /> 
+    </RelativeLayout>
+     <ImageView
+            android:id="@+id/all_line3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/miniline_color"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+
+            android:layout_below="@+id/empty_fill"
+            android:visibility="gone" />
+	 <!--PR932945.No note should dispaly.Added by hz_nanbing.zou at 2015/02/14 begin -->
+	 <TextView 
+	     android:id="@+id/widget_no_note"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     android:text="@string/no_note_exist"
+         android:layout_centerInParent="true"
+         android:textColor="@color/content_font_color"
+	     android:visibility="gone"
+	     />
+	 <!--PR932945.No note should dispaly.Added by hz_nanbing.zou at 2015/02/14 begin -->
+	 
+     <ImageView
+         android:id="@+id/all_line4"
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:layout_marginStart="12dp"
+         android:layout_marginEnd="12dp"
+         android:layout_marginBottom="38dp"
+         android:layout_alignParentBottom="true"
+         android:background="@color/miniline_color"
+         android:visibility="gone" />
+
+</RelativeLayout>
+<!--PR853279  When empty,widget not good.Added by hz_nanbing.zou at 05/12/2014 end  --> -->
+</LinearLayout>

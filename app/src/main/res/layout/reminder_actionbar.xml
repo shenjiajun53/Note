@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dip"
+    android:layout_height="0dip" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:divider="?android:attr/dividerVertical"
+        android:dividerPadding="12dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:showDividers="middle" >
+
+        <ImageButton
+            android:id="@+id/save_reminder_item"
+            style="?android:attr/actionButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:src="@drawable/save" />
+
+        <ImageButton
+            android:id="@+id/cancle_reminder_item"
+            style="?android:attr/actionButtonStyle"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="6dip"
+            android:clickable="true"
+            android:background="@drawable/delete" />
+    </RelativeLayout>
+
+</FrameLayout>

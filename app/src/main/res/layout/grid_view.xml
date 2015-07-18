@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_floating_material_light"
+    android:orientation="vertical"
+ >
+    <!-- FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 begin -->
+
+	<!--PR901833 Scroll bar display.Modified by hz_nanbing.zou begin  -->
+    <GridView
+        android:paddingStart="12dp"
+    	android:paddingEnd="12dp"
+        android:id="@+id/grid"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:choiceMode="multipleChoice"
+        android:gravity="center"
+        android:horizontalSpacing="12dp"
+        android:numColumns="auto_fit"
+        android:paddingTop="16dp"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="16dp" >
+    </GridView>
+    <!-- FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 end -->
+    <!--PR901833 Scroll bar display.Modified by hz_nanbing.zou end  -->
+
+    <TextView
+        android:id="@+id/zeroshowing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/no_note_exist"
+        android:textColor="#88000000"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/newadd_btn2"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/floatactionbutton"
+        android:translationZ="5dp"
+        android:src="@drawable/ic_add_black_24dp"
+        android:tint="@color/theme_bg_white"
+        android:visibility="visible" />
+
+</RelativeLayout>

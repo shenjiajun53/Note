@@ -1,0 +1,20 @@
+<resources>
+
+    <!--
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    -->
+<!--     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentStatus">true</item> 
+        API 19 theme customizations can go here.
+    </style> -->
+    
+        <style name="BaseTheme" >
+           <!--  <item name="android:colorPrimary">#1389af</item> -->
+            <item name="android:colorPrimaryDark">#026da7</item>
+            
+      </style>
+
+</resources>

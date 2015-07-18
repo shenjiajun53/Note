@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License. 
+-->
+
+<!--
+| ============================================================================ |
+|      Modifications on Features list / Changes Request / Problems Report      |
+| **************************************************************************** |
+|    date   |        author        |         Key          |      comment       |
+| **********|**********************|**********************|******************* |
+| 10/30/2013|jinren.zhu            |FR526419              |DNA style pictures  |
+|           |                      |                      |    for framework   |
+| **********|**********************|**********************|******************* |
+| 11/27/2013|ying.shen             |FR561207              |Some options is not |
+|           |                      |                      |DNA style in Notes  |
+|           |                      |                      |app                 |
+| **********|**********************|**********************|******************* |
+| 05/16/2014|nenghai.huang         |FR641469              |some apps need to   |
+|           |                      |                      |support landscape   |
+|           |                      |                      |mode                |
+| **********|**********************|**********************|******************* |
+| 05/21/2014|    yongchuan.wan     |       PR681559       |[Notes]Notes UI di- |
+|           |                      |                      |splay abnormally w- |
+|           |                      |                      |hen keyboard disap- |
+|           |                      |                      |pear                |
+| **********|**********************|**********************|******************* |
+| 06/09/2014|    yanmei.zhang      |       PR690676       |[Notes]Notes display|
+|           |                      |                      |unfriendly after    |
+|           |                      |                      |rotate screen       |
+| **********|**********************|**********************|******************* |
+================================================================================
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tct.note" android:versionCode="548"
+    android:versionName="v5.1.1.5.0223.0">
+    
+
+
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    
+<!--[FEATURE]-Mod-BEGIN by TSNJ.(ying.shen),27/11/2013,PR-561207, -->
+    <uses-permission android:name="com.jrd.permission.SWITCH_JRDTHEME"/>
+<!--[FEATURE]-Mod-BEGIN by TSNJ.(ying.shen)-->
+    <!--[BUGFIX]-ADD-BEGIN by AMNJ.rurong.zhang, 2015-1-26,PR913570-->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!--[BUGFIX]-ADD-END by AMNJ.rurong.zhang, 2015-1-26,PR913570-->
+<!-- android:allowSkinChange="true"  zhaozhao.li at 2014-08-18 -->
+    <application
+        android:icon="@drawable/notes"
+        android:label="@string/app_name"
+        android:allowBackup="true"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        >
+        <!-- [FEATURE]-Mod-BEGIN by TSCD(yanmei.zhang),06/09/2014,PR690676,[Notes]Notes display unfriendly after rotate screen -->
+        <!-- [FEATURE]-Mod-BEGIN by TSCD.nenghai.huang 05/16/2004, FR641469 some apps need to support landscape mode -->
+        <!-- android:screenOrientation="portrait" zhaozhao.li at 2014-08-20 -->
+        <!--PR938045 Main list should just show once. Added by hz_nanbing.zou at 2015/03/2 begin-->
+        <!--For PR986149  -->
+        <activity
+            android:name="com.tct.note.ui.NotesListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale"
+            android:label="@string/app_name"
+            android:theme="@style/NoteHoloTheme"
+            android:uiOptions="splitActionBarWhenNarrow"
+            
+            android:launchMode="singleTask"
+            
+            android:windowSoftInputMode="adjustPan" >
+            <!--PR938045 Main list should just show once. Added by hz_nanbing.zou at 2015/03/2 end-->
+        <!-- [FEATURE]-Mod-END by TSCD.nenghai.huang 05/16/2004, FR641469-->
+        <!-- [FEATURE]-Mod-END by TSCD(yanmei.zhang),06/09/2014,PR690676-->
+           <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".activity.SearchResultActivity" />
+        </activity>
+        <!--[BUGFIX]-Mod-BEGIN by TSNJ.(xiang.miao),11/29/2013,PR-550515,-->
+       <!-- [FEATURE]-Mod-BEGIN by TSCD(yanmei.zhang),06/09/2014,PR690676,[Notes]Notes display unfriendly after rotate screen -->
+        <!-- [FEATURE]-Mod-BEGIN by TSCD.nenghai.huang 05/16/2004, FR641469 some apps need to support landscape mode -->
+        <!--[BUGFIX]-Add-BEGIN by TSCD.yongchuan.wan,05/21/2014,PR681559,              -->
+        <!--[Notes]Notes UI display abnormally when keyboard disappear-->
+        <!-- android:screenOrientation="portrait" zhaozhao.li -->
+
+        <!--  PR818876 the edit bar dismiss,when input too long.Modified by hz_nanbing.zou at 27/10/2014 begin -->
+        <!--  PR849485 launch mode change.Modified by hz_nanbing.zou at 25/11/2014 begin -->
+     <!--    <activity
+            android:name="com.jrdcom.notepad2.ui.NoteEditorActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateUnchanged"> -->
+            
+        <!--PR895438 After set font size,editor has been reset.Modified by hz_nanbing.zou at 07/01/2015 begin -->    
+        <!-- PR943411 The record will loss after change . Modified by Gu Feilong start -->
+        <!-- PR945460 Recording disappear after plug in SIM Card . Modified by Gu Feilong start -->
+        <!--For PR989967  -->
+        <activity
+            android:name="com.tct.note.ui.NoteEditorActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|fontScale|locale|layoutDirection|mcc|mnc|keyboard"
+            
+            
+            android:theme="@style/mysatus"      
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateUnchanged">
+         <!-- PR945460 Recording disappear after plug in SIM Card . Modified by Gu Feilong end -->
+         <!-- PR943411 The record will loss after change . Modified by Gu Feilong end -->
+         <!--PR895438 After set font size,editor has been reset.Modified by hz_nanbing.zou at 07/01/2015 end -->
+            
+         <!--  PR849485 launch mode change.Modified by hz_nanbing.zou at 25/11/2014 end -->
+         <!--  PR818876 the edit bar dismiss,when input too long.Modified by hz_nanbing.zou at 27/10/2014 end -->
+
+        <!--[BUGFIX]-Add-END by TSCD.yongchuan.wan-->
+        <!-- [FEATURE]-Mod-END by TSCD.nenghai.huang 05/16/2004, FR641469-->
+        <!-- [FEATURE]-Mod-END by TSCD(yanmei.zhang),06/09/2014,PR690676-->
+        <!--[BUGFIX]-Mod-END by TSNJ.(xiang.miao),-->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.tct.note.NewNote" />
+                
+                <!-- <action android:name="com.tcl.note.NewNote" /> -->
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.tct.note.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- [FEATURE]-Mod-BEGIN by TSCD(yanmei.zhang),06/09/2014,PR690676,[Notes]Notes display unfriendly after rotate screen -->
+        <!-- [FEATURE]-Mod-BEGIN by TSCD.nenghai.huang 05/16/2004, FR641469 some apps need to support landscape mode -->
+        <!-- android:screenOrientation="portrait" zhaozhao.li -->
+<!--         <activity
+            android:name="com.jrdcom.notepad2.ui.ReminderSettingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Holo.Light" > -->
+            
+        <activity
+            android:name="com.tct.note.ui.ReminderSettingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/mysatus" >
+            
+        </activity>
+        <!-- [FEATURE]-Mod-END by TSCD.nenghai.huang 05/16/2004, FR641469-->
+        <!-- [FEATURE]-Mod-END by TSCD(yanmei.zhang),06/09/2014,PR690676-->
+        
+        <!--  PR832397 when search result is null,page flash,.Modified by hz_nanbing.zou at 07/11/2014 begin -->
+        <activity
+            android:name="com.tct.note.ui.SearchResultActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" 
+            android:theme="@style/mysatus"
+            
+            android:windowSoftInputMode="adjustPan">
+        <!--  PR832397 when search result is null,page flash,.Modified by hz_nanbing.zou at 07/11/2014 end -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <provider
+            android:name="com.tct.note.data.NoteProvider"
+            android:authorities="com.tct.note"
+            android:exported="true" />
+        <provider
+            android:name="com.tct.note.SuggestionsProvider"
+            android:authorities="com.tct.note.SuggestionsProvider" >
+        </provider>
+        <!-- [BUGFIX]-Mod-BEGIN by TCTNB.(Yan.Teng),01/15/2014,PR-588549, -->
+
+        <!-- PR825487 reminder dialog display wrong.Modified by hz_nanbing.zou at 3/11/2014 begin -->
+        <!--[BUGFIX]-ADD-BEGIN by AMNJ.rurong.zhang, 2015-1-26,PR913570-->
+        <!--PR915668.Locked screen,reminder dialog not show.Added by hz_nanbing.zou at 28/01/2015 begin-->
+        <!--For PR956458 -->
+        <activity
+            android:name="com.tct.note.ui.ReminderActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|navigation|screenSize"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:taskAffinity=""
+            android:theme="@style/reminderActivitytheme" >
+        </activity>
+        <!--PR915668.Locked screen,reminder dialog not show.Added by hz_nanbing.zou at 28/01/2015 end-->
+        <!-- [BUGFIX]-ADD-END by AMNJ.rurong.zhang, 2015-1-26,PR913570 -->
+        <!-- PR825487 reminder dialog display wrong.Modified by hz_nanbing.zou at 3/11/2014 end -->
+
+        <!-- [BUGFIX]-Mod-END by TCTNB.(Yan.Teng), -->
+
+        <!-- PR824283 reminder not work.Modified by hz_nanbing.zou at 14/10/2014 begin -->
+        <!--  <receiver
+            android:name= "com.jrdcom.note.util.ReminderReceivereminderReceiver" > -->
+         <receiver
+      android:name= "com.tct.note.util.ReminderReceiver" >
+		<!-- PR824283 reminder not work.Modified by hz_nanbing.zou at 14/10/2014 end -->
+
+            <intent-filter>
+                <action android:name="com.tct.note.util.ReminderReceiver" />
+            </intent-filter>
+        </receiver>
+        
+       <!-- PR 836616.Music && Record play as the same time. Added by hz_nanbing.zou at 11/11/2014 begin -->  
+        <receiver
+      android:name= "com.tct.note.util.MusicReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.android.music.playstatechanged" />
+            </intent-filter>
+        </receiver>
+    <!--PR 836616.Music && Record play as the same time. Added by hz_nanbing.zou at 11/11/2014 end  -->   
+
+<!--         <receiver
+            android:name="com.tct.note.widget.NoteAppWidgetProvider"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+
+                <action android:name="com.tct.note.widget.DEL_FROM_APP" />
+
+                <action android:name="com.tct.note.widget.UPDATE" />
+
+                <action android:name="com.tct.note.widget.PREVIOUS_CLICK" />
+                <action android:name="com.tct.note.widget.NEXT_CLICK" />
+                <action android:name="com.tct.note.widget.DEL_CLICK" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_info" />
+        </receiver> -->
+        
+        
+          <receiver
+            android:name="com.tct.note.widget.NoteMiniAppProvider"
+            android:label="@string/app_name" >
+            <intent-filter>
+                 
+                <action android:name = "android.appwidget.action.APPWIDGET_ENABLED"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+<action android:name="com.mediatek.intent.action.SETTINGS_PACKAGE_DATA_CLEARED" />
+                <action android:name="android.intent.action.PACKAGE_DATA_CLEARED" />
+                <!--PR906497 Date,Date format changed,should change.Added by hz_nanbing.zou at 19/01/2015 begin -->
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <!--PR906497 Date,Date format changed,should change.Added by hz_nanbing.zou at 19/01/2015 end -->
+                
+                <action android:name="com.tct.note.widget.DEL_FROM_APP" />
+
+                <action android:name="com.tct.note.widget.UPDATE" />
+
+                <action android:name="com.tct.note.widget.PREVIOUS_CLICK" />
+                <action android:name="com.tct.note.widget.NEXT_CLICK" />
+                <action android:name="com.tct.note.widget.DEL_CLICK" />
+                
+                <action android:name="com.jrdcom.guestmode.ACTION_GUESTMODE_STATUS_CHANGE"/>
+                
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/miniapp_info" />
+        </receiver>
+        
+
+        <service
+            android:name="com.tct.note.MediaPlaybackService"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.tct.note.MediaPlaybackService" />
+            </intent-filter>
+        </service>
+        
+        <service
+            android:name="com.tct.note.widget.UpdateWidgetService">
+            <intent-filter>
+                <action android:name="com.jrd.notepad.UPDATE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.tct.note.widget.MyWidgetService">
+            <intent-filter>
+                <action android:name="com.tct.note.widget.pre" />
+                <action android:name="com.tct.note.widget.next" />
+            </intent-filter>
+        </service>
+
+    </application>
+    
+
+</manifest>

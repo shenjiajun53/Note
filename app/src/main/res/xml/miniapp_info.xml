@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--PR893816 widget preview image not good.Modified by hz_nanbing.zou at14/01/2015 begin-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/widget_mini2"
+    android:minWidth="@dimen/mini_width"
+    android:minHeight="@dimen/mini_height"
+    android:previewImage="@drawable/widget_preview"
+    android:resizeMode="horizontal|vertical" >
+</appwidget-provider>
+<!--PR893816 widget preview image not good.Modified by hz_nanbing.zou at14/01/2015 end-->
