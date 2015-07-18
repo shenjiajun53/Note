@@ -3530,7 +3530,7 @@ public class NoteEditorActivity extends Activity {
         View v = LayoutInflater.from(this).inflate(R.layout.dialog, null);
         d = new AlertDialog.Builder(this).create();
     //PR945404 It pop up FC after reject a call.Modified by Gu Feilong end
-		//d.create();
+		d.create();
 		d.setContentView(v);
 		d.setCanceledOnTouchOutside(false);
 		d.show();

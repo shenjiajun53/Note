@@ -66,6 +66,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.BackgroundColorSpan;
@@ -94,6 +96,7 @@ import android.widget.LinearLayout;
 import android.widget.ListPopupWindow;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -115,7 +118,7 @@ import com.tct.note.util.setMenuIconUtils;
 //import android.widget.SearchView.SearchAutoComplete;
 
 
-public class NotesListActivity extends Activity implements OnItemClickListener {
+public class NotesListActivity extends AppCompatActivity implements OnItemClickListener {
     public static final String TAG = "NoteListActivity";
     private TextView count;
     GridView gridview;
@@ -167,6 +170,7 @@ public class NotesListActivity extends Activity implements OnItemClickListener {
     private ProgressDialog mProgressDialog;
     private ActionMode mMode;
     //modify by mingyue.wang for pr949159 end
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -175,8 +179,10 @@ public class NotesListActivity extends Activity implements OnItemClickListener {
         //deleteEmptyNote();
         //modify by mingyue.wang for pr948002 end
         //[BUGFIX]-ADD-END by AMNJ.rurong.zhang, 2015-1-17,PR898848
-        actionBar = getActionBar();
-        setupActionBar();
+        //actionBar = getActionBar();
+        //setupActionBar();
+        setupToolBar();
+        setSupportActionBar(toolbar);
         showGridView(0);
 //        boolean isfirstEnter = isFirstEnter(this, this.getClass().getName());
 //        if (isfirstEnter) {
@@ -245,6 +251,45 @@ public class NotesListActivity extends Activity implements OnItemClickListener {
         editor.commit();
     }
 
+    private void setupToolBar() {
+//        ViewGroup v = (ViewGroup) LayoutInflater.from(this).inflate(R.layout.note_list_actionbar,
+//                null);
+//        // Deleted by zhaozhao.li at 2014-08-19 begin
+//        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM, ActionBar.DISPLAY_SHOW_CUSTOM
+//                | ActionBar.DISPLAY_SHOW_HOME);
+//        // Deleted by zhaozhao.li at 2014-08-19 end
+//        actionBar.setCustomView(v, new ActionBar.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT,
+//                ActionBar.LayoutParams.WRAP_CONTENT, Gravity.CENTER_VERTICAL | Gravity.RIGHT));
+//        actionBar.setDisplayShowHomeEnabled(false);//For Ergo 5.1.0
+
+        //actionBar.setIcon(R.drawable.ic_description_white);
+
+        ViewGroup view= (ViewGroup) getLayoutInflater().inflate(R.layout.note_list_toolbar,null);
+        toolbar= (Toolbar) view.findViewById(R.id.note_list_toolbar);
+
+//        actionBar.setDisplayHomeAsUpEnabled(false);
+//        actionBar.setDisplayShowCustomEnabled(true);
+//        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.note_action_bar_bg));
+//        actionBar.setSplitBackgroundDrawable(getResources().getDrawable(R.drawable.note_action_bar_bg));
+//        actionBar.setStackedBackgroundDrawable(getResources().getDrawable(R.drawable.note_action_bar_bg));
+        SipnnerView = view.findViewById(R.id.sort_spinner);
+//        mSortDropdownPopup = new SortDropdownPopup(this);
+//
+//        //FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 begin
+//        /*mSortDropdownPopup.setAdapter(new ArrayAdapter<String>(this,
+//                R.layout.simple_expandable_list_item_1, getData()));*/
+//        mSortDropdownPopup.setAdapter(new SortAdapter(this, getData()));
+//        //FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 end
+//
+        count = (TextView) view.findViewById(R.id.unread_conv_count);
+        count.setText("" + getCount());
+//        SipnnerView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mSortDropdownPopup.show();
+//            }
+//        });
+    }
     private void setupActionBar() {
         ViewGroup v = (ViewGroup) LayoutInflater.from(this).inflate(R.layout.note_list_actionbar,
                 null);
@@ -610,13 +655,13 @@ public class NotesListActivity extends Activity implements OnItemClickListener {
                 //PR 825446 auto show search text.Added by hz_nanbing.zou at 5/11/2014 end
 
                 gridview.setVisibility(View.VISIBLE);
-                
+
                 //Do not show "add" when search item expand.
                 //mFloatingBtn_add.setVisibility(View.VISIBLE);//New GD should show add when search
                 //Do not show "add" when search item expand.
-                
+
                 myMenu.setGroupVisible(MENU_TWO, true);
-                
+
                 return true;
             }
         });
