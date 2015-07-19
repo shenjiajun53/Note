@@ -52,6 +52,7 @@
 
 <!-- FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 begin -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/note_editor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -62,7 +63,16 @@
     android:fitsSystemWindows="true"
     
     >
+<android.support.v7.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/note_editor_toolbar"
+    android:background="?attr/colorPrimary"
+    android:minHeight="?attr/actionBarSize"
+    app:subtitle="Sub Title"
+    app:title="Note">
 
+</android.support.v7.widget.Toolbar>
 <!-- [BUGFIX]-Mod-BEGIN by TSCD.gerong,06/23/2014,PR-708559, -->
 <!-- FR789597 modified the code for standalone APK development by bing.wang.hz 2014.09.15 begin-->
 <!-- The last line text or photo should be semi transparent in editor page -->

@@ -64,29 +64,29 @@
         <item name="colorPrimaryDark">@color/statuebar_color</item>
         <item name="android:actionBarWidgetTheme">@style/NoteActionBarTheme</item>
         <item name="android:windowBackground">@android:color/background_light</item>
-        
+
         <!--PR926704.note select mode: action bar font color is wrong.Added by hz_nanbing.zou at 02/09/2015 begin-->
         <item name="android:actionModeBackground">@color/actionbar_color</item>
         <!--PR926704.note select mode: action bar font color is wrong.Added by hz_nanbing.zou at 02/09/2015 end-->
-        
-        
+
+
         <item name="android:actionModeCloseDrawable">@drawable/ic_ab_clear_white_24dp</item>
-        
+
         <!--For check list  -->
         <!-- <item name="android:selectableItemBackground">@drawable/menuselect</item> -->
-        
+
         <item name="android:textColorHighlight">@color/theme_bg_yellow</item>
-        
+
         <!--PR891489.Selection backgroud not good.Added by hz_nanbing.zou at 06/01/2015 begin  -->
         <item name="actionBarTheme">@style/choicemode</item>
         <!--PR891489.Selection backgroud not good.Added by hz_nanbing.zou at 06/01/2015 end  -->
-        
+
         <!--PR888027 The first time enter Notes,flash black screen.Added by hz_nanbing.zou at29/12/2014 begin -->
         <!-- <item name="android:windowIsTranslucent">true</item> -->
         <!--PR888027 The first time enter Notes,flash black screen.Added by hz_nanbing.zou at29/12/2014 end -->
-        
+
         <item name="android:actionBarStyle">@style/MyActionBar</item>
-        
+
     </style>
 
     <style name="NoteActionBarTheme" parent="@android:style/Theme.Holo">
@@ -120,7 +120,7 @@
     </style>
     <!-- PR854590 Reminder dialog ugly.Added by hz_nanbing.zou at 27/11/2014 end -->
 
-    <style name="mysatus" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="mysatus" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/actionbar_color</item>
         <item name="colorPrimaryDark">@color/statuebar_color</item>
         

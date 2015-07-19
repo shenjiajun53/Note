@@ -97,7 +97,7 @@ import android.widget.ListPopupWindow;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
-import android.widget.SearchView;
+import android.support.v7.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -181,9 +181,10 @@ public class NotesListActivity extends AppCompatActivity implements OnItemClickL
         //[BUGFIX]-ADD-END by AMNJ.rurong.zhang, 2015-1-17,PR898848
         //actionBar = getActionBar();
         //setupActionBar();
+
+        showGridView(0);
         setupToolBar();
         setSupportActionBar(toolbar);
-        showGridView(0);
 //        boolean isfirstEnter = isFirstEnter(this, this.getClass().getName());
 //        if (isfirstEnter) {
 //            displayDialog();
@@ -500,7 +501,7 @@ public class NotesListActivity extends AppCompatActivity implements OnItemClickL
     // * Show the view in grid mode.
     // */
     private void showGridView(int groupId) {
-        setContentView(R.layout.grid_view);
+        setContentView(R.layout.note_list);
         
 //        initAddBtn(true);
         
@@ -642,29 +643,30 @@ public class NotesListActivity extends AppCompatActivity implements OnItemClickL
     	menu.findItem(Menu.FIRST+1).setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
     	
         mSearchView = (SearchView) mSearchItem.getActionView();
-        mSearchItem.setOnActionExpandListener(new OnActionExpandListener() {
-            @Override
-            public boolean onMenuItemActionExpand(MenuItem arg0) {
-                adpaterSelViewAndPpwWidth();//PR1041987 touch the search btn,need change width
-                return true;
-            }
-            @Override
-            public boolean onMenuItemActionCollapse(MenuItem arg0) {
-                //PR 825446 auto show search text.Added by hz_nanbing.zou at 5/11/2014 begin
-                setAutoMatch("");
-                //PR 825446 auto show search text.Added by hz_nanbing.zou at 5/11/2014 end
 
-                gridview.setVisibility(View.VISIBLE);
-
-                //Do not show "add" when search item expand.
-                //mFloatingBtn_add.setVisibility(View.VISIBLE);//New GD should show add when search
-                //Do not show "add" when search item expand.
-
-                myMenu.setGroupVisible(MENU_TWO, true);
-
-                return true;
-            }
-        });
+//        mSearchItem.setOnActionExpandListener(new OnActionExpandListener() {
+//            @Override
+//            public boolean onMenuItemActionExpand(MenuItem arg0) {
+//                adpaterSelViewAndPpwWidth();//PR1041987 touch the search btn,need change width
+//                return true;
+//            }
+//            @Override
+//            public boolean onMenuItemActionCollapse(MenuItem arg0) {
+//                //PR 825446 auto show search text.Added by hz_nanbing.zou at 5/11/2014 begin
+//                setAutoMatch("");
+//                //PR 825446 auto show search text.Added by hz_nanbing.zou at 5/11/2014 end
+//
+//                gridview.setVisibility(View.VISIBLE);
+//
+//                //Do not show "add" when search item expand.
+//                //mFloatingBtn_add.setVisibility(View.VISIBLE);//New GD should show add when search
+//                //Do not show "add" when search item expand.
+//
+//                myMenu.setGroupVisible(MENU_TWO, true);
+//
+//                return true;
+//            }
+//        });
 
         mSearchView.setOnQueryTextListener(mQueryTextListener);
         mSearchView.setQueryHint(getString(R.string.search_hint));

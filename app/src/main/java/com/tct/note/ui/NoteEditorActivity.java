@@ -150,6 +150,8 @@ import android.os.Message;
 import android.os.StatFs;
 import android.os.SystemClock;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -201,7 +203,7 @@ import com.tct.note.widget.UpdateWidgetService;
 //FR816175 modify issue from UE team.Modified by hz_nanbing.zou at 21/10/2014 end
 //[BUGFIX]-ADD-BEGIN by TCTNB.Yan.TENG,01/02/2014,PR580222
 
-public class NoteEditorActivity extends Activity {
+public class NoteEditorActivity extends AppCompatActivity {
     private static final String TAG = NoteEditorActivity.class.getSimpleName();
     //private ImageButton attachItem;
     //private ImageButton colorItem;
@@ -332,6 +334,7 @@ public class NoteEditorActivity extends Activity {
 	 private TextView vRecordSave ;
 	 private ImageButton vRecordTap;
 	 private ImageButton vRecordTap2;
+    private Toolbar toolbar;
 	 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -444,7 +447,9 @@ public class NoteEditorActivity extends Activity {
 //        this.registerReceiver(mbr, iflt);
         //PR 836616.Music && Record play as the same time. Added by hz_nanbing.zou at 11/11/2014 end
         
-        ActionBar actionBar = getActionBar();
+       // ActionBar actionBar = getActionBar();
+        toolbar= (Toolbar) findViewById(R.id.note_editor_toolbar);
+        setSupportActionBar(toolbar);
         editorView = LayoutInflater.from(this).inflate(R.layout.custom_action_bar2, null);
         imageview = (ImageView) findViewById(R.id.audio_view);
         date_view = (TextView) findViewById(R.id.date);
@@ -832,12 +837,12 @@ public class NoteEditorActivity extends Activity {
             }
 
         });*/
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM, ActionBar.DISPLAY_SHOW_CUSTOM
-                | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_SHOW_TITLE);
-        actionBar.setCustomView(editorView);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(false);
-        actionBar.setDisplayShowCustomEnabled(true);
+//        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM, ActionBar.DISPLAY_SHOW_CUSTOM
+//                | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_SHOW_TITLE);
+//        actionBar.setCustomView(editorView);
+//        actionBar.setDisplayShowHomeEnabled(false);
+//        actionBar.setDisplayHomeAsUpEnabled(false);
+//        actionBar.setDisplayShowCustomEnabled(true);
 //        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.note_action_bar_bg));
         initEditor();
         //[BUGFIX]-Add-BEGIN by TCTNB.Tang.Ding,11/11/2013,551800,
@@ -855,7 +860,7 @@ public class NoteEditorActivity extends Activity {
         
 
         //Added for View mode.
-        setViewMode(isView);
+//        setViewMode(isView);
         //Added for View mode.
 
         
